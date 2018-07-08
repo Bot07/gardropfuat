@@ -191,4 +191,4 @@ msg.channel.send({embed: embed})
 });
 
 //msg.channel.delete() kanalı siliyor
-client.login("bok")
+client.login(process.env.BOT_TOKEN);
