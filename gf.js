@@ -191,4 +191,4 @@ msg.channel.send({embed: embed})
 });
 
 //msg.channel.delete() kanalı siliyor
-client.login("NDYyMjA5ODUxNTc4Mzg0Mzg0.DhkLJQ.7CuhdvD66t2nQKmfKw1SXgXlN9E")
+client.login("bok")
