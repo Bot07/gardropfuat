@@ -31,7 +31,7 @@ let embed = new Discord.RichEmbed()
 .addField(":cry: Mod Komutları :hammer: ",  
 "\n gf!temizçek = Kanalı tamamen temizler. \n gf!temizle <sayı> = Belirtilen sayı kadar mesaj siler.") 
 .addField(":joy: Eğlence Komutları :stuck_out_tongue: ", 
-"*\n gf!yazıtura = Yazı tura atar şansına ne gelirse.\n gf!havalıyürü = Havalı yürür. \n gf!havalıyumruk = Havalı bir şekilde yumruk atar.\n gf!selamla = Politakacı gibi selamlar. \n gf!tokatla = Birini tokatlar. \n gf!topuğunasık = Birinin topuğuna sıkar. \n gf!avatar = Profil fotoğrafını gösterir. \n gf!yanıyorsunfuatabi = Dene de gör! \n hıyar = Şimdi yedim ulan seni!") 
+"*\n gf!sunucubilgi = Sunucu bilgilerini gösterir. \n gf!yazıtura = Yazı tura atar şansına ne gelirse.\n gf!havalıyürü = Havalı yürür. \n gf!havalıyumruk = Havalı bir şekilde yumruk atar.\n gf!selamla = Politakacı gibi selamlar. \n gf!tokatla = Birini tokatlar. \n gf!topuğunasık = Birinin topuğuna sıkar. \n gf!avatar = Profil fotoğrafını gösterir. \n gf!yanıyorsunfuatabi = Dene de gör! \n hıyar = Şimdi yedim ulan seni!") 
 .setFooter(`Bot yapımcısı: Emir | AgentSLayer#5218'dir`) 
 msg.member.send({embed: embed}) 
 }
@@ -134,7 +134,8 @@ msg.channel.sendEmbed(new Discord.RichEmbed().setImage(`${cevap}`).setColor("RAN
 
 client.on('message', msg => {
 if (msg.content === prefix + 'davet') { 
-let embed = new Discord.RichEmbed() 
+
+	let embed = new Discord.RichEmbed() 
 .setColor(Math.floor(Math.random() * (0xFFFFFF + 5))) 
 .addField("Beni Eklemek İçin Tıkla",  
 "https://bit.ly/2tQCiLz") 
@@ -200,6 +201,31 @@ msg.reply('Duyuru başarıyla yapıldı!');
       client.users.forEach(u=>u.send("")
 }}
     });
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === prefix + 'sunucubilgi') {
+    if  (msg.channel.type === 'dm') {
+      const ozelmesajuyarii = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(msg.author.username, msg.author.avatarURL);
+    msg.author.sendEmbed(ozelmesajuyarii); }
+    if (msg.channel.type !== 'dm') {
+      const sunucubilgi = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(msg.guild.name, msg.guild.iconURL)
+    .addField('Ad:', msg.guild.name)
+    .addField('ID', msg.guild.id)
+    .addField('Ana kanal:', msg.guild.defaultChannel)
+    .addField('Bölge', msg.guild.region)
+    .addField('Üye sayısı:', msg.guild.memberCount)
+    .addField('Sahibi:', msg.guild.owner)
+    .addField('Kanal sayısı:', msg.guild.channels.size)
+    .addField('Oluşturulma tarihi:', msg.guild.createdAt);
+    return  msg.channel.sendEmbed(sunucubilgi);
+    }
+  }
+});
 
 //msg.channel.delete() kanalı siliyor
 client.login(process.env.BOT_TOKEN);
