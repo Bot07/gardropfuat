@@ -192,15 +192,7 @@ msg.channel.send({embed: embed})
 }} 
 });
 
-client.on('message', msg => {
-if (msg.content.toLowerCase() === prefix + 'duyuru') {
-        if (msg.author.368450660036771850 !== ayarlar.sahip) {
-      msg.reply('Benim yapımcım değilsin!');
-    } else {
-msg.reply('Duyuru başarıyla yapıldı!');
-      client.users.forEach(u=>u.send("")
-}}
-    });
+
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix + 'sunucubilgi') {
     if  (msg.channel.type === 'dm') {
