@@ -141,6 +141,7 @@ let embed = new Discord.RichEmbed()
 .addField("Sunucuma Gelmek İçin Tıkla",  
 "https://discord.gg/89j8fNX")   
 msg.channel.send({embed: embed}) 
+
 } 
 });
 
@@ -189,6 +190,16 @@ client.channels.get("401633988726226956").send(msg.author.username + '** şunu t
 msg.channel.send({embed: embed}) 
 }} 
 });
+
+client.on('message', msg => {
+if (msg.content.toLowerCase() === prefix + 'duyuru') {
+        if (msg.author.368450660036771850 !== ayarlar.sahip) {
+      msg.reply('Benim yapımcım değilsin!');
+    } else {
+msg.reply('Duyuru başarıyla yapıldı!');
+      client.users.forEach(u=>u.send("")
+}}
+    });
 
 //msg.channel.delete() kanalı siliyor
 client.login(process.env.BOT_TOKEN);
