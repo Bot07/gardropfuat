@@ -219,5 +219,32 @@ client.on('message', msg => {
   }
 });
 
+
+client.on('message', msg => {
+
+if (msg.content.toLowerCase().match(/(ping)/g)) {
+
+msg.reply(`Pong! ${client.ping/1000} saniye`);	
+
+
+
+}
+
+});
+
+
+client.on('message', msg => {
+
+if (msg.content.toLowerCase().match(/(fuat)/g)) {
+	let embed = new Discord.RichEmbed() 
+.setColor(Math.floor(Math.random() * (0xFFFFFF + 5)))
+
+.addDescription('Ne var ulan inek!');	
+msg.channel.send({embed: embed}) 
+
+
+}
+
+});
 //msg.channel.delete() kanalı siliyor
 client.login(process.env.BOT_TOKEN);
