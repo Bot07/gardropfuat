@@ -239,7 +239,7 @@ if (msg.content.toLowerCase().match(/(fuat)/g)) {
 	let embed = new Discord.RichEmbed() 
 .setColor(Math.floor(Math.random() * (0xFFFFFF + 5)))
 
-.addDescription('Ne var ulan inek!');	
+.setDescription('Ne var ulan inek!');	
 msg.channel.send({embed: embed}) 
 
 
