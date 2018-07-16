@@ -394,5 +394,6 @@ var sonuc = sans[Math.floor((Math.random() * sans.length))];
 msg.channel.send({embed: embed}) 
 } 
 });
+}
 //msg.channel.delete() kanalı siliyor
 client.login(process.env.BOT_TOKEN);
