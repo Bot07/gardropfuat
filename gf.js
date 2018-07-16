@@ -365,5 +365,34 @@ msg.channel.sendEmbed(new Discord.RichEmbed().setImage(`${cevap}`).setColor("RAN
 
 
 });
+ client.on('message', msg => {
+   if (msg.content.startsWith(prefix + "gf!tekrarla")) {
+    if (msg.channel.type !== "dm"){
+    let söz = msg.content.substring(2 + 9);
+	   let embed = new Discord.RichEmbed()
+	   .setAuthor(msg.author.username, msg.author.avatarURL)
+    .setColor(3447003)
+	.addField("Tekrarlıyorum... ",
+		 söz )
+return msg.channel.send({embed})}
+   }
+
+});
+client.on('message', msg => {
+if (msg.content.toLowerCase() === prefix + "sorusor") { 
+	 if (msg.channel.type !== "dm"){
+    let söz = msg.content.substring(2 + 8);
+var sans = ["Evet", "Hayır"]; 
+var sonuc = sans[Math.floor((Math.random() * sans.length))]; 
+	let embed = new Discord.RichEmbed()
+	   .setAuthor(msg.author.username, msg.author.avatarURL)
+    .setColor(3447003)
+	.addField("Soru:",
+		  söz)
+	.addField("Cevap:",
+		 `**Sonuç: ${sonuc}**`)
+msg.channel.send({embed: embed}) 
+} 
+});
 //msg.channel.delete() kanalı siliyor
 client.login(process.env.BOT_TOKEN);
