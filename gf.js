@@ -32,7 +32,7 @@ let embed = new Discord.RichEmbed()
 "\n gf!temizçek = Kanalı tamamen temizler. \n gf!temizle <sayı> = Belirtilen sayı kadar mesaj siler.") 
 .addField("Eğlence Komutları", 
 "\n gf!bekçi = Gene kaçtı inek! \n gf!karikatür = Rasgele karikatür gösterir. \n gf!halayçek = Halay çeker. \n gf!güncelleme = En son güncellemeleri gösterir.\n gf!sunucubilgi = Sunucu bilgilerini gösterir. \n gf!yazıtura = Yazı tura atar şansına ne gelirse.\n gf!havalıyürü = Havalı yürür. \n gf!havalıyumruk = Havalı bir şekilde yumruk atar.\n gf!selamla = Politakacı gibi selamlar. \n gf!tokatla = Birini tokatlar. \n gf!topuğunasık = Birinin topuğuna sıkar. \n gf!avatar = Profil fotoğrafını gösterir. \n gf!yanıyorsunfuatabi = Dene de gör! \n hıyar = Şimdi yedim ulan seni!") 
-.setFooter(`Bot yapımcısı: Emir | AgentSLayer#5218'dir.`) 
+.setFooter("Bot yapımcısı: Emir | AgentSLayer#5218'dir.") 
 msg.member.send({embed: embed}) 
 }
 });
