@@ -12,7 +12,7 @@ client.on('ready', () => {
    if (msg.content.startsWith(prefix + "konuştur")) {
     if (msg.channel.type !== "dm"){
     let söz = msg.content.substring(2 + 9);
-	msg.channel.bulkDelete(2);
+	msg.delete (msg.content == 'konuştur')
 	   let embed = new Discord.RichEmbed()
     .setColor(3447003)
 	.setDescription(söz + '\n"Adamsan beni konuşturacağına kendin konuş, hadi bakıyım!"')
@@ -25,14 +25,14 @@ if (msg.content === prefix + 'yardım') {
 let embed = new Discord.RichEmbed() 
 .setColor(Math.floor(Math.random() * (0xFFFFFF + 5))) 
 .addField("KOMUTLAR", 
-"tüm komutlar burada ->") 
+"Tüm komutlar burada ->") 
 .addField("Ana Komutlar", 
-"gf!bilgi = Botun bilgilerini gösterir. \n gf!istatistik = Botun istatistiklerini gösterir. \n gf!davet = Botun ekleme linkini gösterir. \n gf!sunucular = Haraca bağlanan sunucular. \n gf!tavsiye = Tavsiyenizi iletir. ") 
-.addField(":cry: Mod Komutları :hammer: ",  
+" gf!bilgi = Botun bilgilerini gösterir. \n gf!istatistik = Botun istatistiklerini gösterir. \n gf!davet = Botun ekleme linkini gösterir. \n gf!sunucular = Haraca bağlanan sunucular. \n gf!tavsiye = Tavsiyenizi iletir. ") 
+.addField("Mod Komutları",  
 "\n gf!temizçek = Kanalı tamamen temizler. \n gf!temizle <sayı> = Belirtilen sayı kadar mesaj siler.") 
-.addField(":joy: Eğlence Komutları :stuck_out_tongue: ", 
-"*\n gf!sunucubilgi = Sunucu bilgilerini gösterir. \n gf!yazıtura = Yazı tura atar şansına ne gelirse.\n gf!havalıyürü = Havalı yürür. \n gf!havalıyumruk = Havalı bir şekilde yumruk atar.\n gf!selamla = Politakacı gibi selamlar. \n gf!tokatla = Birini tokatlar. \n gf!topuğunasık = Birinin topuğuna sıkar. \n gf!avatar = Profil fotoğrafını gösterir. \n gf!yanıyorsunfuatabi = Dene de gör! \n hıyar = Şimdi yedim ulan seni!") 
-.setFooter(`Bot yapımcısı: Emir | AgentSLayer#5218'dir`) 
+.addField("Eğlence Komutları", 
+"\n gf!bekçi = Gene kaçtı inek! \n gf!karikatür = Rasgele karikatür gösterir. \n gf!halayçek = Halay çeker. \n gf!güncelleme = En son güncellemeleri gösterir.\n gf!sunucubilgi = Sunucu bilgilerini gösterir. \n gf!yazıtura = Yazı tura atar şansına ne gelirse.\n gf!havalıyürü = Havalı yürür. \n gf!havalıyumruk = Havalı bir şekilde yumruk atar.\n gf!selamla = Politakacı gibi selamlar. \n gf!tokatla = Birini tokatlar. \n gf!topuğunasık = Birinin topuğuna sıkar. \n gf!avatar = Profil fotoğrafını gösterir. \n gf!yanıyorsunfuatabi = Dene de gör! \n hıyar = Şimdi yedim ulan seni!") 
+.setFooter(`Bot yapımcısı: Emir | AgentSLayer#5218'dir.`) 
 msg.member.send({embed: embed}) 
 }
 });
@@ -244,6 +244,129 @@ msg.channel.send({embed: embed})
 
 
 }
+
+});
+
+client.on('message', msg => {
+
+
+
+if (msg.content ===  prefix + 'halayçek') { 
+
+
+
+let embed = new Discord.RichEmbed() 
+
+.setDescription("Haydeee")
+
+msg.channel.send({embed: embed})
+
+var cevaplar = ['https://goo.gl/3y9zPE','https://goo.gl/3y9zPE' ]; 
+
+var cevap = cevaplar[Math.floor(Math.random() * cevaplar.length)]; 
+
+
+
+msg.channel.sendEmbed(new Discord.RichEmbed().setImage(`${cevap}`).setColor("RANDOM")) 
+
+
+
+}
+
+
+
+});
+client.on('message', msg => {
+
+
+
+if (msg.content === prefix + 'güncelleme') { 
+
+
+
+let embed = new Discord.RichEmbed() 
+
+
+
+.setColor(Math.floor(Math.random() * (0xFFFFFF + 5))) 
+
+
+
+.addField("Güncellemeler",  
+
+
+
+"gf!halayçek ve yeni komutlar eklendi") 
+
+  
+
+
+
+msg.channel.send({embed: embed}) 
+
+
+
+} 
+
+
+
+});
+client.on('message', msg => {
+
+
+
+if (msg.content ===  prefix + 'karikatür') { 
+
+
+
+let embed = new Discord.RichEmbed() 
+
+.setDescription(":D")
+
+msg.channel.send({embed: embed})
+
+var cevaplar = ['https://goo.gl/y5BHzg','https://goo.gl/LfQ1mZ','https://goo.gl/6ULFVu','https://goo.gl/cD2UTY' ]; 
+
+var cevap = cevaplar[Math.floor(Math.random() * cevaplar.length)]; 
+
+
+
+msg.channel.sendEmbed(new Discord.RichEmbed().setImage(`${cevap}`).setColor("RANDOM")) 
+
+
+
+}
+
+
+
+});
+client.on('message', msg => {
+
+
+
+if (msg.content ===  prefix + 'bekçi') { 
+
+
+
+let embed = new Discord.RichEmbed() 
+
+.setDescription("İyi kaçtın Şakir!")
+
+msg.channel.send({embed: embed})
+
+var cevaplar = ['https://goo.gl/6oX7us','https://goo.gl/6oX7us' ]; 
+
+var cevap = cevaplar[Math.floor(Math.random() * cevaplar.length)]; 
+
+
+
+msg.channel.sendEmbed(new Discord.RichEmbed().setImage(`${cevap}`).setColor("RANDOM")) 
+
+
+
+}
+
+
 
 });
 //msg.channel.delete() kanalı siliyor
