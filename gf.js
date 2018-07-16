@@ -163,7 +163,15 @@ let embed = new Discord.RichEmbed()
 msg.channel.send({embed: embed})
 }
 });
-
+client.on('message', msg => {
+if (msg.content.toLowerCase() === 'fuat') { 
+let embed = new Discord.RichEmbed() 
+.setColor(Math.floor(Math.random() * (0xFFFFFF + 5))) 
+.addField("Ne var ulan inek!",
+"Şimdi yedim ulan seni!")
+msg.channel.send({embed: embed})
+}
+});
 client.on('message', msg => {
 if (msg.content ===  prefix + 'yanıyorsunfuatabi') { 
 let embed = new Discord.RichEmbed() 
@@ -233,19 +241,7 @@ msg.reply(`Pong! ${client.ping/1000} saniye`);
 });
 
 
-client.on('message', msg => {
 
-if (msg.content.toLowerCase().match(/(fuat)/g)) {
-	let embed = new Discord.RichEmbed() 
-.setColor(Math.floor(Math.random() * (0xFFFFFF + 5)))
-
-.setDescription('Ne var ulan inek!');	
-msg.channel.send({embed: embed}) 
-
-
-}
-
-});
 
 client.on('message', msg => {
 
