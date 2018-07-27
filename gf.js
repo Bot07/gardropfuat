@@ -228,17 +228,7 @@ client.on('message', msg => {
 });
 
 
-client.on('message', msg => {
 
-if (msg.content.toLowerCase().match(/(ping)/g)) {
-
-msg.reply(`Pong! ${client.ping/1000} saniye`);	
-
-
-
-}
-
-});
 
 
 
